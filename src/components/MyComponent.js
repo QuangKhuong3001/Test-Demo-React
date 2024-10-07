@@ -1,16 +1,11 @@
 import React from "react";
+import UserInfo from "./UserInfo";
 
 class MyComponent extends React.Component {
-
-    state = {
-        name: 'khuong',
-        age: 21
-    };
-
     render() {
         return (
             <div>
-                My name is {this.state.name}
+                <UserInfo />
             </div>
         );
     }
