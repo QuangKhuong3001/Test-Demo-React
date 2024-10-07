@@ -1,10 +1,16 @@
 import React from "react";
 
 class MyComponent extends React.Component {
+
+    state = {
+        name: 'khuong',
+        age: 21
+    };
+
     render() {
         return (
             <div>
-                My first component
+                My name is {this.state.name}
             </div>
         );
     }
