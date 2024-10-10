@@ -72,8 +72,9 @@ body {
         background: #303030;
         color: white;
         &:hover{
-        background: black; 
-      }
+          background: black; 
+          border: none;
+        }
       }
     }
   }

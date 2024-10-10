@@ -7,11 +7,14 @@ import {
     SidebarFooter,
     SidebarContent,
 } from 'react-pro-sidebar'; import 'react-pro-sidebar/dist/css/styles.css';
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem } from 'react-icons/fa';
 import sidebarBg from "../../assets/bg2.jpg"
+import { DiReact } from 'react-icons/di'
+import '../admin/sidebar.scss'
+import { Link } from 'react-router-dom';
 
 const SideBar = (props) => {
-    const { image, collapsed, toggled, handleToggleSidebar } = props;
+    const { collapsed, toggled, handleToggleSidebar } = props;
     return (
         <div>
             <ProSidebar
@@ -34,7 +37,8 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        sidebarTitle
+                        <DiReact size={'3em'} color={'00bfff'} />
+                        KhuongQuang
                     </div>
                 </SidebarHeader>
 
@@ -42,41 +46,21 @@ const SideBar = (props) => {
                     <Menu iconShape="circle">
                         <MenuItem
                             icon={<FaTachometerAlt />}
-                            suffix={<span className="badge red">new</span>}
                         >
-                            dashboard
+                            Dashboard
+                            <Link to="/admin" />
                         </MenuItem>
-                        <MenuItem icon={<FaGem />}>components</MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            icon={<FaRegLaughWink />}
+                            icon={<FaGem />}
+                            title="Features"
                         >
-                            <MenuItem>submenu 1</MenuItem>
-                            <MenuItem>submenu 2</MenuItem>
-                            <MenuItem>submenu 3</MenuItem>
-                        </SubMenu>
-                        <SubMenu
-                            prefix={<span className="badge gray">3</span>}
-                            icon={<FaHeart />}
-                        >
-                            <MenuItem>submenu 1</MenuItem>
-                            <MenuItem>submenu 2</MenuItem>
-                            <MenuItem>submenu 3</MenuItem>
-                        </SubMenu>
-                        <SubMenu icon={<FaList />}>
-                            <MenuItem>submenu 1 </MenuItem>
-                            <MenuItem>submenu 2 </MenuItem>
-                            <SubMenu>
-                                <MenuItem>submenu 3.1 </MenuItem>
-                                <MenuItem>submenu 3.2 </MenuItem>
-                                <SubMenu>
-                                    <MenuItem>submenu 3.3.1 </MenuItem>
-                                    <MenuItem>submenu 3.3.2 </MenuItem>
-                                    <MenuItem>submenu 3.3.3 </MenuItem>
-                                </SubMenu>
-                            </SubMenu>
+                            <MenuItem>User Management
+                                <Link to="/admin/manage-user" />
+                            </MenuItem>
+                            <MenuItem>Quiz Management</MenuItem>
+                            <MenuItem>Question Management</MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>
@@ -89,20 +73,19 @@ const SideBar = (props) => {
                         }}
                     >
                         <a
-                            href="https://github.com/azouaoui-med/react-pro-sidebar"
+                            href="https://web.facebook.com/profile.php?id=100015581985913"
                             target="_blank"
                             className="sidebar-btn"
                             rel="noopener noreferrer"
                         >
-                            <FaGithub />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
+                                &#169;KhuongQuang
                             </span>
                         </a>
                     </div>
                 </SidebarFooter>
             </ProSidebar>
-        </div>
+        </div >
     )
 }
 
