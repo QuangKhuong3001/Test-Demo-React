@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Exception } from "sass";
 
 const instance = axios.create({
     baseURL: 'http://localhost:8081/',
